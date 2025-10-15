@@ -1,0 +1,36 @@
+name: mushroom_classifier
+description: Aplikasi klasifikasi jamur beracun dan aman dikonsumsi menggunakan CNN
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI
+  cupertino_icons: ^1.0.6
+
+  # Image
+  image_picker: ^1.0.7
+  image: ^4.1.7
+
+  # TensorFlow Lite (tanpa helper)
+  tflite_flutter: ^0.10.4
+
+  # (opsional) izin & path
+  permission_handler: ^11.3.0
+  path_provider: ^2.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/labels.txt
+    - assets/mushroom_classifier.tflite
