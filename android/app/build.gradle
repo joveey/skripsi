@@ -87,7 +87,10 @@ flutter {
 dependencies {
     // Core dependencies
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.22"
-    
-    // MultiDex support
     implementation 'androidx.multidex:multidex:2.0.1'
+
+    // TensorFlow Lite runtime (versi baru, kompatibel dengan FC v12)
+    implementation("org.tensorflow:tensorflow-lite:2.19.0")
+    // Kalau nanti model kamu butuh Select TF Ops (jarang perlu), buka yang ini:
+    // implementation("org.tensorflow:tensorflow-lite-select-tf-ops:2.19.0")
 }

@@ -18,11 +18,20 @@ allprojects {
 }
 
 rootProject.buildDir = '../build'
+
 subprojects {
+    // Satukan pengaturan subprojects di satu blok
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
     project.evaluationDependsOn(':app')
+
+    // >>> Paksa versi TensorFlow Lite runtime agar kompatibel dengan .tflite kamu
+    configurations.all {
+        resolutionStrategy {
+            force "org.tensorflow:tensorflow-lite:2.18.0"
+            // Jika suatu saat perlu ops tambahan (jarang perlu), buka baris ini:
+            // force "org.tensorflow:tensorflow-lite-select-tf-ops:2.18.0"
+        }
+    }
 }
 
 tasks.register("clean", Delete) {
